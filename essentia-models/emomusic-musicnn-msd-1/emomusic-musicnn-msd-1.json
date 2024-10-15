@@ -1,0 +1,48 @@
+{
+    "name": "arousal_valence",
+    "version": "0.1",
+    "description": "Transfer Learning model for Music Emotion Recognition in Arousal-Valence domain with Essentia pretrained model, Musicnn, and emoMusic dataset.",
+    "author": "Xavier Lizarraga",
+    "email": "xavier.lizarraga@upf.edu",
+    "release_date": "05/02/2022",
+    "framework": "tensorflow",
+    "framework_version": "1.15.0",
+    "programming_env": {
+        "language": "python",
+        "version": "3.7",
+        "others": ""
+    },
+    "model_types": [
+        "frozen_model"
+    ],
+    "dataset": {
+        "name": "emoMusic",
+        "size": "1000 songs",
+        "link": "https://cvml.unige.ch/databases/emoMusic/",
+        "metrics": {
+            "accuracy": 0.684,
+            "Correlation Coefficient": 0.64,
+            "Root Mean Squared Error": 0.999,
+            "Concordance Correlation Coefficient": 0.561
+        }
+    },
+    "schema": {
+        "inputs": [
+            {
+                "name": "flatten_in_input",
+                "type": "float",
+                "shape": [
+                    1,
+                    200
+                ]
+            }
+        ],
+        "outputs": [
+            {
+                "name": "dense_out",
+                "op": "linear"
+            }
+        ]
+    },
+    "citation": "There is not citation or reference yet. We are working on it."
+}
